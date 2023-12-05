@@ -121,8 +121,12 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
 ### ApiFailure
     no data
 
-# tools used
+## tools used
 
 [Union string | number](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)
 
 Barrel index file on typescript
+
+## To do next
+
+- Do the use cases and the repostory contracts
