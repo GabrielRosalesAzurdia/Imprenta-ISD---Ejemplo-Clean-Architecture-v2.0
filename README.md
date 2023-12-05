@@ -28,7 +28,7 @@ Tiene carpetas models, repostorycontracts, usecasescontracts, usecasesimpl
 Empezando con esto tenemos que definir que errrores y que entidades vamos a 
 tener en nuestra app
 
-Las entidades para esta tienda de tarjetas serán: 
+Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus atributos, casos de uso y llamadas a API o almacenamiento local: 
 
 ### Card (local y api)
     - name (string)
@@ -38,8 +38,15 @@ Las entidades para esta tienda de tarjetas serán:
     - discount (bool)
     - discountPorcentage (float)
 
-### CardList (local y api)
-    - cards (array[Card])
+    Use Cases:
+    - Representar una Card
+
+    Repository:
+    - Llamar una Card en específico API
+    - Llamar a todas las Card API
+
+
+//! idk if this is going to stay, we can manage just like []Card and not an entity on its own
 
 ### User (local y api)
     - name (string)
@@ -50,28 +57,57 @@ Las entidades para esta tienda de tarjetas serán:
     - email (string)
     - photo (string)
 
+    Use Cases:
+    - Representar a un usuario
+    - Iniciar seción
+    - Cerrar seción
+    - Registrar un usuario
+    - Actualiza datos del usuario
+
+    Repository:
+    - Llamar un usuario API
+    - Login API
+    - Logout API
+    - Signup API
+    - Actualizar dirección API
+
 ### CardsSelected (local y api)
-    - id (int)
+    - id (int | undefined)
+    - shoppingCartId (number | undefined)
     - card (Card.id)
     - quantity (int)
     - total (float)
 
+    Use Cases:
+    - Representar un item en el carrito de compras
+    - Total por la cantidad de tarjetas
+
+    Repository:
+    - Llamar a los elementos de un carrito  API
+    - Guardar en base de datos API
+    - Eliminar a los elementos de un carrito LOCAL
+
 ### ShoppingCart (local)
-    - id (int)
+    - id (int | undefined)
     - total (float)
     - user (User.id)
     - adress (string)
     - shippingMethod (int)
     - paymentMethod (int)
-    - cards (array[CardsSelected])
+    - open (bool)
 
-### Order (api)
-    - id (int)
-    - total (float)
-    - adress (string)
-    - shippingMethod (int)
-    - paymentMethod (int)
-    - cards (array[CardSelected])
+    Use Cases:
+    - Dar total de compra
+    - Darle al usuario una compra
+
+    Repository:
+    - Convertirse en una orden API
+    - Traer las ordenes de un usuario API
+    - Guardar en la base de datos API
+    - Eliminar shoppingCart LOCAL
+
+" the id is null until is given by the API until then is just local stuff "
+" the same happens with CardsSelected "
 
 ### LocalStorageError
     - msg (string)
@@ -85,3 +121,8 @@ Las entidades para esta tienda de tarjetas serán:
 ### ApiFailure
     no data
 
+# tools used
+
+[Union string | number](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)
+
+Barrel index file on typescript
