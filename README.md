@@ -39,18 +39,17 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - discountPorcentage (float)
 
     Use Cases:
-    - Tomar lista de Card 
-    - Tomar lista de Card 
-    - Tomar Card individual 
-    - Tomar Card individual 
+    - Tomar lista de Card Local y Api
+    - Tomar Card individual Local y Api
+    - Crear lista de Card Local
 
     Repository:
     Grupo 1
-    - Llamar Card individual Local
     - Llamar Card individual Api
     Grupo 2
     - Llamar a todas las Card API
     - Llamar a todas las Card Local
+    - Guardar todas las Card Local
 
 ### User (local y api)
     - name (string)
@@ -83,20 +82,19 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - total (float)
 
     Use Cases:
-    - Tomar los elementos de un carrito
-    - Guardar un elemento en el carrito
-    - Actualizar elemento en el carrito
-    - Eliminar elemento en el carrito
-    - Llevar a link del producto
+    - Tomar los elementos de un carrito LOCAL
+    - Guardar carrito LOCAL
+    - Guardar un elemento en el carrito LOCAL
+    - Actualizar elemento en el carrito LOCAL
+    - Eliminar elemento en el carrito LOCAL
+    - Tomar los elementos de un carrito terminado API
 
     Repository:
     Grupo 1
-    - Llamar a los elementos de un carrito  API
+    - Llamar a los elementos de un carrito terminado  API
     Grupo 2
-    - Guardar un elemento en el carrito LOCAL
-    - Actualizar elemento en el carrito LOCAL
-    Grupo 3
-    - Eliminar elemento en el carrito LOCAL
+    - Llamar a los elementos de un carrito LOCAL
+    - Guardar carrito LOCAL
 
 ### ShoppingCart (local)
     - id (int | undefined)
@@ -152,18 +150,19 @@ Barrel index file on typescript
 
 Flujo de trabajo con array en caso de actualizar
 
+Presentation Layer:
 The presentation layer receives input from the user or external systems. In the context of updating an element in an array, this might involve capturing user input through a user interface or receiving data from external sources.
+
 Use Case Layer:
-
 The use case layer contains the application's business logic. In the scenario of updating an element in an array, the use case would be responsible for processing the received data, updating the appropriate object in the array, and deciding how to proceed.
+
 Entity & Domain Layer:
-
 This layer holds the domain models and entities of your application. In the case of an array of objects, the relevant entity or domain model representing the array and its elements would be found here.
+
 Repository Interface Layer:
-
 The repository interfaces define contracts for data access operations. If you're dealing with local storage, you might have a repository interface specifying methods like saveData and getData. This is where the interfaces come into play, defining how the use case can interact with data storage without specifying the implementation details.
-Infrastructure Layer:
 
+Infrastructure Layer:
 The infrastructure layer contains concrete implementations of the repository interfaces. In this case, it would include a repository implementation responsible for translating the domain objects (array of objects) to JSON and saving it to local storage. Additionally, it retrieves data from local storage and translates it back into domain objects.
 
 ### Habilitando Barrel

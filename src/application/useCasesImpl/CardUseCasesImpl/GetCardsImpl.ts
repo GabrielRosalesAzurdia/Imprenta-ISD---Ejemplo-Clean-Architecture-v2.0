@@ -8,8 +8,19 @@ export class GetCardsImpl implements GetCards{
         
     }
 
-    fetchDataLocal(): Card[]|LocalStorageFailure {
-        return this.repository.callCardsLocalStorage()
+    fetchDataLocal(): Card[] | LocalStorageFailure {
+        let result: Card[] | LocalStorageFailure = this.repository.callCardsLocalStorage()
+        if(result instanceof LocalStorageFailure){
+            let resultApi: Promise<Card[]|ApiFailure> = this.fetchDataApi()
+            return resultApi.then(answer => {
+                if(answer instanceof ApiFailure){
+                    return LocalStorageFailure
+                }
+                this.repository.saveCardsLocalStorage(answer)
+                return answer
+            })
+        }
+        return result
     }
 
     fetchDataApi(): Promise<Card[]|ApiFailure> {

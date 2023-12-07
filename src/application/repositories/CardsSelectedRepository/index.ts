@@ -1,3 +1,2 @@
-export * from './DeleteCardsSelectedRepository';
-export * from './ListCardsSelectedRepository';
-export * from './SaveUpdateCardsSelectedRepository';
+export * from './CallApiCardsSelectedRepository';
+export * from './CallandSaveLocalCardsSelectedRepository';
