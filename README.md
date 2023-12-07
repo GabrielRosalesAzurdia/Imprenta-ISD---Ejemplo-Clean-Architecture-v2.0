@@ -39,14 +39,16 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - discountPorcentage (float)
 
     Use Cases:
-    - Tomar lista de Card Local
-    - Tomar lista de Card Api
-    - Tomar Card individual Local
-    - Tomar Card individual Api
+    - Tomar lista de Card 
+    - Tomar lista de Card 
+    - Tomar Card individual 
+    - Tomar Card individual 
 
     Repository:
+    Grupo 1
     - Llamar Card individual Local
     - Llamar Card individual Api
+    Grupo 2
     - Llamar a todas las Card API
     - Llamar a todas las Card Local
 
@@ -74,20 +76,27 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - Actualizar dirección API
 
 ### CardsSelected (local y api)
-    - id (int | undefined)
+    - id (number | undefined)
     - shoppingCartId (number | undefined)
     - card (Card.id)
     - quantity (int)
     - total (float)
 
     Use Cases:
-    - Representar un item en el carrito de compras
-    - Total por la cantidad de tarjetas
+    - Tomar los elementos de un carrito
+    - Guardar un elemento en el carrito
+    - Actualizar elemento en el carrito
+    - Eliminar elemento en el carrito
+    - Llevar a link del producto
 
     Repository:
+    Grupo 1
     - Llamar a los elementos de un carrito  API
-    - Guardar en base de datos API
-    - Eliminar a los elementos de un carrito LOCAL
+    Grupo 2
+    - Guardar un elemento en el carrito LOCAL
+    - Actualizar elemento en el carrito LOCAL
+    Grupo 3
+    - Eliminar elemento en el carrito LOCAL
 
 ### ShoppingCart (local)
     - id (int | undefined)
@@ -131,24 +140,26 @@ Barrel index file on typescript
 
 ## To do next
 
+- Implement new Use Case layer
+
 - Do the use cases and the repostory contracts
 
-- No tenemos un use case porque
-tenemos un repo, tenemos un repo
-porque tenemos un repository,
-los use  case tienen todos
-los algoritmos, trabaja con 
-la interfaz repository, se usa 
-una instancia para toda la app
+- Agregar ENUM 1 = success
 
-- Repository namas interfaz
+## Special Notes
 
-- Infastructure o controlador es el
-que implementa el repository, hace
-la llamada al servicio y 
-manipula la informacion para
-que la entienda la app
+Flujo de trabajo con array en caso de actualizar
 
-- Use case si debe llevar contrato
+The presentation layer receives input from the user or external systems. In the context of updating an element in an array, this might involve capturing user input through a user interface or receiving data from external sources.
+Use Case Layer:
 
-- 
+The use case layer contains the application's business logic. In the scenario of updating an element in an array, the use case would be responsible for processing the received data, updating the appropriate object in the array, and deciding how to proceed.
+Entity & Domain Layer:
+
+This layer holds the domain models and entities of your application. In the case of an array of objects, the relevant entity or domain model representing the array and its elements would be found here.
+Repository Interface Layer:
+
+The repository interfaces define contracts for data access operations. If you're dealing with local storage, you might have a repository interface specifying methods like saveData and getData. This is where the interfaces come into play, defining how the use case can interact with data storage without specifying the implementation details.
+Infrastructure Layer:
+
+The infrastructure layer contains concrete implementations of the repository interfaces. In this case, it would include a repository implementation responsible for translating the domain objects (array of objects) to JSON and saving it to local storage. Additionally, it retrieves data from local storage and translates it back into domain objects.
