@@ -39,14 +39,16 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - discountPorcentage (float)
 
     Use Cases:
-    - Representar una Card
+    - Tomar lista de Card Local
+    - Tomar lista de Card Api
+    - Tomar Card individual Local
+    - Tomar Card individual Api
 
     Repository:
-    - Llamar una Card en específico API
+    - Llamar Card individual Local
+    - Llamar Card individual Api
     - Llamar a todas las Card API
-
-
-//! idk if this is going to stay, we can manage just like []Card and not an entity on its own
+    - Llamar a todas las Card Local
 
 ### User (local y api)
     - name (string)
@@ -130,3 +132,23 @@ Barrel index file on typescript
 ## To do next
 
 - Do the use cases and the repostory contracts
+
+- No tenemos un use case porque
+tenemos un repo, tenemos un repo
+porque tenemos un repository,
+los use  case tienen todos
+los algoritmos, trabaja con 
+la interfaz repository, se usa 
+una instancia para toda la app
+
+- Repository namas interfaz
+
+- Infastructure o controlador es el
+que implementa el repository, hace
+la llamada al servicio y 
+manipula la informacion para
+que la entienda la app
+
+- Use case si debe llevar contrato
+
+- 
