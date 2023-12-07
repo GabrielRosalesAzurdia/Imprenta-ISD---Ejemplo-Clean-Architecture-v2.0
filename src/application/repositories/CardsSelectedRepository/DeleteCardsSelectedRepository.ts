@@ -1,4 +1,4 @@
-import { LocalStorageFailure } from "../../models";
+import { LocalStorageFailure } from "@/domain";
 
 export interface DeleteCardsSelectedRepository {
     deleteDataLocal(id:number):number|LocalStorageFailure

@@ -1,4 +1,4 @@
-import { ApiFailure, CardsSelected } from "../../models";
+import { ApiFailure, CardsSelected } from "@/domain";
 
 export interface ListCardsSelectedRepository{
     fetchDataApi():Promise<CardsSelected[]|ApiFailure>

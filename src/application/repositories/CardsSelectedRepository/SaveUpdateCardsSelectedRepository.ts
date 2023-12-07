@@ -1,4 +1,4 @@
-import { LocalStorageFailure, CardsSelected } from "../../models";
+import { CardsSelected, LocalStorageFailure } from "@/domain"
 
 export interface SaveUpdateCardsSelectedRepository{
     saveDataLocal(list:CardsSelected[]):number|LocalStorageFailure

@@ -1,6 +1,6 @@
-import { Card, ApiFailure, LocalStorageFailure } from "../../models";
-import { IndividualCardRespository } from "../../repositories";
-import { GetCard } from "../../usecases";
+import { IndividualCardRespository } from "@/application/repositories"
+import { GetCard } from "@/application/useCases"
+import { ApiFailure, Card, LocalStorageFailure } from "@/domain"
 
 export class GetCardImpl implements GetCard{
 

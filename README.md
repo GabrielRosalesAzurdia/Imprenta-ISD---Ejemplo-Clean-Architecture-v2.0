@@ -148,6 +148,8 @@ Barrel index file on typescript
 
 ## Special Notes
 
+### Flow
+
 Flujo de trabajo con array en caso de actualizar
 
 The presentation layer receives input from the user or external systems. In the context of updating an element in an array, this might involve capturing user input through a user interface or receiving data from external sources.
@@ -163,3 +165,17 @@ The repository interfaces define contracts for data access operations. If you're
 Infrastructure Layer:
 
 The infrastructure layer contains concrete implementations of the repository interfaces. In this case, it would include a repository implementation responsible for translating the domain objects (array of objects) to JSON and saving it to local storage. Additionally, it retrieves data from local storage and translates it back into domain objects.
+
+### Habilitando Barrel
+
+Corremos el código ( se debe de reiniciar la app luego )
+
+> npm i -D @types/node
+
+y en el compiler debe de alterarse a lo siguiente :
+
+>   "compilerOptions": {
+>    "types": ["node"], 
+>		"paths": {
+>			"@/*": ["./src/*"] 
+>		},
