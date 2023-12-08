@@ -7,17 +7,14 @@ export class GetCardsImpl implements GetCards{
     constructor(private repository:ListCardRepository){
         
     }
-    
-    initializeDataLocal(): PROCESS.SUCCESS {
-        return this.repository.saveCardsLocalStorage([])
-    }
 
     fetchDataLocal(): Card[] | LocalStorageFailure {
         let result = this.repository.callCardsLocalStorage()
         if(result instanceof LocalStorageFailure && result.sayFailure() == LocalStorageFailures.KEYNOTFOUND){
             return result
-        }else if (result instanceof LocalStorageFailure && result.sayFailure() != LocalStorageFailures.KEYNOTFOUND){
-            return new LocalStorageFailure(LocalStorageFailures.UNEXPECTEDERROR)
+        }else if (result instanceof LocalStorageFailure){
+            // errors that have to be solve and do not have to do with initialazing the local storage
+            return result
         }
         return result
     }

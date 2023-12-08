@@ -50,6 +50,8 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - Llamar a todas las Card API
     - Llamar a todas las Card Local
     - Guardar todas las Card Local
+    Grupo 3
+    - Inicializar
 
 ### User (local y api)
     - name (string)
@@ -82,12 +84,10 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - total (float)
 
     Use Cases:
-    - Tomar los elementos de un carrito LOCAL
-    - Guardar carrito LOCAL
-    - Guardar un elemento en el carrito LOCAL
-    - Actualizar elemento en el carrito LOCAL
-    - Eliminar elemento en el carrito LOCAL
-    - Tomar los elementos de un carrito terminado API
+    - Agregar una tarjeta al carito
+    - Llamar los miembros de un pedido terminado
+    - Tomar tarjetas, actualizar y eliminar
+    - Inicializar
 
     Repository:
     Grupo 1
@@ -95,6 +95,8 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     Grupo 2
     - Llamar a los elementos de un carrito LOCAL
     - Guardar carrito LOCAL
+    Grupo 3
+    - Inicializar
 
 ### ShoppingCart (local)
     - id (int | undefined)

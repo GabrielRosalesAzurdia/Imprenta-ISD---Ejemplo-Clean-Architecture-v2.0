@@ -1,5 +1,5 @@
-import { ApiFailure, Card } from "@/domain";
+import { ApiFailure, CardsSelected } from "@/domain";
 
 export interface GetCardsSelectedApi{
-    fetchData():Promise<Card[]|ApiFailure>
+    fetchData():Promise<CardsSelected[]|ApiFailure>
 }

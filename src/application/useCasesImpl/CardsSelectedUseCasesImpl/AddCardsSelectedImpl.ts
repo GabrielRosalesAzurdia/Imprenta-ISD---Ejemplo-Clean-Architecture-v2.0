@@ -20,7 +20,8 @@ export class AddCardsSelectedImpl implements AddCardsSelected{
         if (dataList instanceof LocalStorageFailure && dataList.sayFailure() === LocalStorageFailures.KEYNOTFOUND) {
             return dataList;
         } else if (dataList instanceof LocalStorageFailure) {
-            return new LocalStorageFailure(LocalStorageFailures.UNEXPECTEDERROR);
+            // errors that have to be solve and do not have to do with initialazing the local storage
+            return dataList
         }
 
         return dataList;
