@@ -6,14 +6,38 @@ export class Failure{}
 /**
  * Fallo del localStorage
  */
-export class LocalStorageFailure extends Failure{
 
+export enum LocalStorageFailures{
+    KEYNOTFOUND,
+    UNEXPECTEDERROR,
+    OBJECTNOTINLOCAL,
 }
-
+export class LocalStorageFailure extends Failure{
+    failure : LocalStorageFailures
+    constructor(failure:LocalStorageFailures){
+        super()
+        this.failure = failure
+    }
+    sayFailure(){
+        return this.failure
+    }
+}
 /**
  * Fallo de la API
  */
-
+export enum ApiFailures{
+    NOTCONNECTED,
+    NOTFOUND,
+    NODATA,
+    NOPERMISSION
+}
 export class ApiFailure extends Failure{
-
+    failure : ApiFailures
+    constructor(failure : ApiFailures){
+        super()
+        this.failure = failure
+    }
+    sayFailure(){
+        return this.failure
+    }
 }

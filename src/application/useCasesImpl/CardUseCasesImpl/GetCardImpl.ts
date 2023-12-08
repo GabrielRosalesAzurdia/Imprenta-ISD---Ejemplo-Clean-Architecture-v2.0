@@ -1,6 +1,6 @@
 import { IndividualCardRespository, ListCardRepository } from "@/application/repositories"
 import { GetCard } from "@/application/useCases"
-import { ApiFailure, Card, LocalStorageFailure } from "@/domain"
+import { ApiFailure, Card, LocalStorageFailure, LocalStorageFailures } from "@/domain"
 
 export class GetCardImpl implements GetCard{
 
@@ -11,13 +11,14 @@ export class GetCardImpl implements GetCard{
     fetchDataLocal(id: number): Card | LocalStorageFailure {
         let data = this.repositoryLOCAL.callCardsLocalStorage()
         if(data instanceof LocalStorageFailure){
-            return LocalStorageFailure
+            return data
         }
-        return data.map(card=>{
-            if (card.id == id){
-                return card
+        for(let i = 0; i<data.length; i++){
+            if(data[i].id == id){
+                return data[i]
             }
-        })
+        }
+        return new LocalStorageFailure(LocalStorageFailures.OBJECTNOTINLOCAL)
     }
 
     fetchDataApi(id:number): Promise<Card | ApiFailure> {

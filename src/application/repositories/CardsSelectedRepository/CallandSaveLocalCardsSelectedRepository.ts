@@ -1,6 +1,6 @@
-import { CardsSelected, LocalStorageFailure } from "@/domain";
+import { CardsSelected, LocalStorageFailure, PROCESS } from "@/domain";
 
 export interface CallandSaveLocalCardsSelectedRepository {
     callCardsSelectedLocal():CardsSelected[]|LocalStorageFailure
-    saveCardsSelectedLocal(newList:CardsSelected[]):number|LocalStorageFailure
+    saveCardsSelectedLocal(newList:CardsSelected[]):PROCESS.SUCCESS
 }
