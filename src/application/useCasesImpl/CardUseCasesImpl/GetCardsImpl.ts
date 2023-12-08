@@ -7,6 +7,10 @@ export class GetCardsImpl implements GetCards{
     constructor(private repository:ListCardRepository){
         
     }
+    
+    initializeDataLocal(): PROCESS.SUCCESS {
+        return this.repository.saveCardsLocalStorage([])
+    }
 
     fetchDataLocal(): Card[] | LocalStorageFailure {
         let result = this.repository.callCardsLocalStorage()

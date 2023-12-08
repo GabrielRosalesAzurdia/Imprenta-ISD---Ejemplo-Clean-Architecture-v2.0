@@ -1,5 +1,5 @@
 import { ApiFailure, Card } from "@/domain";
 
 export interface GetCardsSelectedApi{
-    fetchData():Card[]|ApiFailure
+    fetchData():Promise<Card[]|ApiFailure>
 }
