@@ -1,5 +1,5 @@
 import { CardsSelected, PROCESS } from "@/domain";
 
-export interface AddCardsSelected{
+export interface InitializeCardsSelected{
     initializeData(newList:CardsSelected[]):PROCESS.SUCCESS
 }
