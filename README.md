@@ -88,6 +88,7 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - Llamar los miembros de un pedido terminado
     - Tomar tarjetas, actualizar y eliminar
     - Inicializar
+    - Enviar a API
 
     Repository:
     Grupo 1
@@ -97,6 +98,8 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - Guardar carrito LOCAL
     Grupo 3
     - Inicializar
+    Grupo 4
+    - Enviar a API
 
 ### ShoppingCart (local)
     - id (int | undefined)
@@ -108,17 +111,24 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - open (bool)
 
     Use Cases:
-    - Dar total de compra
-    - Darle al usuario una compra
+    - Inicializar
+    - Crear Carrito
+    - Enviar carrito a API
+    - Traer carritos terminados de API
 
     Repository:
+    Grupo 1
+    - Inicializar
+    Grupo 2
+    - Crear Carrito
+    Grupo 3
     - Convertirse en una orden API
+    Grupo 4
     - Traer las ordenes de un usuario API
-    - Guardar en la base de datos API
-    - Eliminar shoppingCart LOCAL
 
 " the id is null until is given by the API until then is just local stuff "
 " the same happens with CardsSelected "
+" You first send the cart, save id and give it to the cardsSelected " 
 
 ### LocalStorageError
     - msg (string)
