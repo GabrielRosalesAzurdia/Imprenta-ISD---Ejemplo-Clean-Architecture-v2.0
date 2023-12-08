@@ -5,4 +5,5 @@ export * from './useCases/CardUseCases';
 export * from './useCases/CardsSelectedUseCases';
 export * from './useCases';
 export * from './useCasesImpl/CardUseCasesImpl';
+export * from './useCasesImpl/CardsSelectedUseCasesImpl';
 export * from './useCasesImpl';
