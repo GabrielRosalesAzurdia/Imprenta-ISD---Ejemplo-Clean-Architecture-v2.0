@@ -1,6 +1,6 @@
 import { ApiFailure, LocalStorageFailure, PROCESS } from "@/domain";
 
 export interface SetIdSendCardsSelected {
-    setIdCardsSelected(shoppingcartid:number):PROCESS.SUCCESS|LocalStorageFailure
-    sendApiCardsSelected():Promise<PROCESS.SUCCESS|ApiFailure|LocalStorageFailure>
+    setIdData(shoppingcartid:number):PROCESS.SUCCESS|LocalStorageFailure
+    sendData():Promise<PROCESS.SUCCESS|ApiFailure|LocalStorageFailure>
 }

@@ -1,5 +1,5 @@
 import { ApiFailure, CardsSelected, PROCESS } from "@/domain";
 
 export interface SendApiCardsSelectedRepository{
-    sendData(newList:CardsSelected[]):Promise<PROCESS.SUCCESS|ApiFailure>
+    sendCardsSelectedApi(newList:CardsSelected[]):Promise<PROCESS.SUCCESS|ApiFailure>
 }

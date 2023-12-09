@@ -112,17 +112,19 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
 
     Use Cases:
     - Inicializar
-    - Crear Carrito
-    - Enviar carrito a API
+    - Guardar Carrito (guardar los datos de envio y eso)
+    - Traer carrito (traer carrito local)
+    - Enviar carrito a API (confirmar orden)
     - Traer carritos terminados de API
 
     Repository:
     Grupo 1
     - Inicializar
     Grupo 2
-    - Crear Carrito
+    - Guardar Carrito
+    - Traer Carrito
     Grupo 3
-    - Convertirse en una orden API
+    - Enviar en una orden API
     Grupo 4
     - Traer las ordenes de un usuario API
 

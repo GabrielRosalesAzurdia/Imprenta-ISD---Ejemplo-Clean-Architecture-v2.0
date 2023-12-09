@@ -1,5 +1,5 @@
 import { PROCESS } from "@/domain";
 
-export interface InitializeCardsSelected{
+export interface InitializeShoppingCart{
     initializeData():PROCESS.SUCCESS
 }

@@ -5,7 +5,7 @@ export class GetCardsSelectedApiImpl implements GetCardsSelectedApi{
     
     constructor(private repository:CallApiCardsSelectedRepository){}
 
-    fetchData(): Promise<CardsSelected[] | ApiFailure> {
+    fetchDataApi(): Promise<CardsSelected[] | ApiFailure> {
         return this.repository.callCardsSelectedApi()
     }
 }

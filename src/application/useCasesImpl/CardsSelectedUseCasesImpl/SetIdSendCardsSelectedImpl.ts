@@ -5,7 +5,7 @@ export class SetIdSendCardsSelectedImpl implements SetIdSendCardsSelected{
 
     constructor(private repositorySend:SendApiCardsSelectedRepository, private repositoryList:CallandSaveLocalCardsSelectedRepository){}
 
-    setIdCardsSelected(shoopingcartid:number): PROCESS | LocalStorageFailure {
+    setIdData(shoopingcartid:number): PROCESS | LocalStorageFailure {
         let dataList = this.repositoryList.callCardsSelectedLocal()
         if(dataList instanceof LocalStorageFailure){
             return dataList
@@ -17,12 +17,12 @@ export class SetIdSendCardsSelectedImpl implements SetIdSendCardsSelected{
         return this.repositoryList.saveCardsSelectedLocal(newDataList)
     }
 
-    sendApiCardsSelected(): Promise<ApiFailure | PROCESS | LocalStorageFailure>  {
+    sendData(): Promise<ApiFailure | PROCESS | LocalStorageFailure>  {
         let dataList = this.repositoryList.callCardsSelectedLocal()
         if(dataList instanceof LocalStorageFailure){
             return Promise.resolve(dataList)
         }
-        return this.repositorySend.sendData(dataList)
+        return this.repositorySend.sendCardsSelectedApi(dataList)
     }
 
 }
