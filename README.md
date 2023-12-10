@@ -63,18 +63,32 @@ Las entidades para esta tienda de tarjetas serán las siguientes, junto con sus 
     - photo (string)
 
     Use Cases:
-    - Representar a un usuario
+    - Traer Tokem
     - Iniciar seción
-    - Cerrar seción
     - Registrar un usuario
+    - Guardar token
+    - Eliminar token local
+    - Eliminar token api
     - Actualiza datos del usuario
+    - Traer Objeto Usuario
+    - Guardar Usuario Id
+    - Traer usuario id
 
     Repository:
-    - Llamar un usuario API
-    - Login API
-    - Logout API
-    - Signup API
-    - Actualizar dirección API
+    Grupo 1:
+    - CallToken
+    Grupo 2:
+    - Iniciar seción
+    - Crear usuario
+    - Guardar Token
+    Grupo 3:
+    - Cerrar seción (eliminar token)
+    Grupo 4:
+    - Actualizar Datos
+    Grupo 5:
+    - Traer objeto usuario API
+    - guardar usuario (nombre, email, dirección, teléfono)
+    - Traer usuario local
 
 ### CardsSelected (local y api)
     - id (number | undefined)
